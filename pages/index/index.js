@@ -4,51 +4,110 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    articleList: [
+      {
+        article_id: 1,
+        title: 'git / git',
+        content: '似的发射点发射点大发噶 金卡法担保法可被罚款发啊不放假咯部分',
+        auth: 'xiao',
+        star: 20,
+        isCollection: false
+      },
+      {
+        article_id: 2,
+        title: '的速度',
+        content: '似的发射点发射点大发噶 金卡法担保法可被罚款发啊不放假咯部分',
+        auth: 'xiao',
+        star: 20,
+        isCollection: false
+      },
+      {
+        article_id: 3,
+        title: '韩国国会',
+        content: '似的发射点发射点大发噶 金卡法担保法可被罚款发啊不放假咯部分',
+        auth: 'xiao',
+        star: 20,
+        isCollection: false
+      },
+      {
+        article_id: 4,
+        title: 'git / git',
+        content: '似的发射点发射点大发噶 金卡法担保法可被罚款发啊不放假咯部分',
+        auth: 'xiao',
+        star: 20,
+        isCollection: false
+      },
+      {
+        article_id: 5,
+        title: 'git / git',
+        content: '似的发射点发射点大发噶 金卡法担保法可被罚款发啊不放假咯部分',
+        auth: 'xiao',
+        star: 20,
+        isCollection: false
+      },
+      {
+        article_id: 6,
+        title: 'git / git',
+        content: '似的发射点发射点大发噶 金卡法担保法可被罚款发啊不放假咯部分',
+        auth: 'xiao',
+        star: 20,
+        isCollection: false
+      },
+      {
+        article_id: 7,
+        title: 'git / git',
+        content: '似的发射点发射点大发噶 金卡法担保法可被罚款发啊不放假咯部分',
+        auth: 'xiao',
+        star: 20,
+        isCollection: false
+      },
+      {
+        article_id: 8,
+        title: 'git / git',
+        content: '似的发射点发射点大发噶 金卡法担保法可被罚款发啊不放假咯部分',
+        auth: 'xiao',
+        star: 20,
+        isCollection: false
+      },
+      {
+        article_id: 9,
+        title: 'git / git',
+        content: '似的发射点发射点大发噶 金卡法担保法可被罚款发啊不放假咯部分',
+        auth: 'xiao',
+        star: 20,
+        isCollection: false
+      },
+      {
+        article_id: 10,
+        title: 'git / git',
+        content: '似的发射点发射点大发噶 金卡法担保法可被罚款发啊不放假咯部分',
+        auth: 'xiao',
+        star: 20,
+        isCollection: false
+      },
+      {
+        article_id: 11,
+        title: 'git / git',
+        content: '似的发射点发射点大发噶 金卡法担保法可被罚款发啊不放假咯部分',
+        auth: 'xiao',
+        star: 20,
+        isCollection: false
+      },
+
+    ],
+    scrollHeight: 0
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  onLoad() {
+    wx.getSystemInfo({
+      success: res => {
+        let scrollHeight = 750 / res.screenWidth * res.screenHeight - 80;
+        this.setData({ scrollHeight });
+        console.log(this)
+      },
+      fail: () => {}
+    });
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+  tabAll() {
+    console.log(this)
   }
 })

@@ -1,4 +1,34 @@
 <!--index.wxml-->
 <view class="container">
-  
+  <view class='tab_container background_Blue'>
+    <text catchtap="tabAll" class='tab_item color_white'>ALL</text>
+    <text class='tab_item color_white'>IOS</text>
+    <text class='tab_item color_white'>React</text>
+  </view>
+  <view class='main_container'>
+    <view
+      wx:for="{{articleList}}" 
+      wx:for-index="idx" 
+      wx:key="article_id"
+      wx:for-item="item" 
+      class='item_container background_White'>
+      <view class='title_container'>
+        <text class='title_text color_dark'>{{item.title}}</text>
+        <text></text>
+      </view>
+      <view class='content_container'>
+        <text class='content_text color_grey'>{{item.content}}</text>
+      </view>
+      <view class='bottom_container'>
+        <view>
+          <text class='content_text color_grey'>作者：{{item.auth}}</text>
+        </view>
+        <view>
+          <text class='content_text color_grey'>Star：{{item.star}}</text>
+        </view>
+        <view>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

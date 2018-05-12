@@ -1,0 +1,15 @@
+.background_Blue {
+  background: #2196F3;
+}
+.background_White {
+  background: #ffffff;
+}
+.color_dark {
+  color: #333333;
+}
+.color_white {
+  color: #ffffff;
+}
+.color_grey {
+  color: #999999;
+}
