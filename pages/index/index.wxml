@@ -1,32 +1,47 @@
 <!--index.wxml-->
 <view class="container">
-  <view class='tab_container background_Blue'>
-    <text catchtap="tabAll" class='tab_item color_white'>ALL</text>
-    <text class='tab_item color_white'>IOS</text>
-    <text class='tab_item color_white'>React</text>
+  <view class='homeNav'>
+    <view class='navList'>
+      <text class='activeTab'>全部</text>
+      <text class='navItem'>精华</text>
+      <text class='navItem'>分享</text>
+      <text class='navItem'>问答</text>
+      <text class='navItem'>招聘</text>
+      <text class='navItem'>测试</text>
+    </view>
+    <view class='nav-bottom'></view>
   </view>
-  <view class='main_container'>
-    <view
-      wx:for="{{articleList}}" 
-      wx:for-index="idx" 
-      wx:key="article_id"
-      wx:for-item="item" 
-      class='item_container background_White'>
-      <view class='title_container'>
-        <text class='title_text color_dark'>{{item.title}}</text>
-        <text></text>
-      </view>
-      <view class='content_container'>
-        <text class='content_text color_grey'>{{item.content}}</text>
-      </view>
-      <view class='bottom_container'>
-        <view>
-          <text class='content_text color_grey'>作者：{{item.auth}}</text>
+  <view class='lists'>
+    <view class='topic_cell'>
+      <view class='author'>
+        <view class='author_first'>
+          <view class='topic_cell_avatar'>
+            <image class='img' mode="widthFix" src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
+          </view>
+          <view class='time_wrap'>
+            <text class='author_text'>aojiaotage天</text>
+            <text class='time_text'>19天前</text>
+          </view>
         </view>
-        <view>
-          <text class='content_text color_grey'>Star：{{item.star}}</text>
+        <view class='top_wrap'>
+          <text class='top_text'>置顶</text>
         </view>
-        <view>
+      </view>
+      <view class='title_wrap'>
+        <text class='title_text'>【NODE PARTY】【上海】最近好像没有上海NodeParty，想来组织一个</text>
+      </view>
+      <view class='list_foot'>
+        <view class='list_item'>
+          <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
+          <text class='list_text'>302</text>
+        </view>
+        <view class='list_item'>
+          <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
+          <text class='list_text'>302</text>
+        </view>
+         <view class='list_item'>
+          <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
+          <text class='list_text'>302</text>
         </view>
       </view>
     </view>
