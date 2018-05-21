@@ -1,0 +1,18 @@
+<!--pages/publish/publish.wxml-->
+<view>
+  <input placeholder-class='holder_input' class='title_input' placeholder='标题（十字以上）...' type='text'></input>
+  <view style='position: relative;'>
+    <text bindtap='Select' class='select_title title_input'>请选择</text>
+    <view class='{{active ? "active" : "unactive"}}' style='position: absolute; width: 100%;'>
+      <view>
+        <text class="content">区域</text>
+      </view>
+      <view>
+        <text class="content">女装</text>
+      </view>
+      <view>
+        <text class="content">排序</text>
+      </view>
+    </view>
+  </view>
+</view>
