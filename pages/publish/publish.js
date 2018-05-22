@@ -1,5 +1,7 @@
 // pages/publish/publish.js
 import { article_list } from '../../lib/js/server.js';
+const app = getApp();
+
 Page({
 
   /**
@@ -22,6 +24,7 @@ Page({
   },
   // 选择列表
   selectItem(event) {
+    console.log(app)
     const dataset = event.currentTarget.dataset;
     this.setData({
       active: false,
@@ -32,6 +35,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+   
   },
 
   /**

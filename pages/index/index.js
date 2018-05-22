@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 import { article_list } from '../../lib/js/server.js';
-const app = getApp()
+const app = getApp();
 
 Page({
   data: {
