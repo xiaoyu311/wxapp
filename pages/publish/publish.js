@@ -1,72 +1,85 @@
 // pages/publish/publish.js
+import { article_list } from '../../lib/js/server.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    active: false
+    active: false,
+    selectTitle: '请选择',
+    titleText: ''
   },
+  // 显示下拉类型
   Select() {
     this.setData({
       active: !this.data.active
     });
-    console.log(this.data.active)
   },
-
+  // 标题内容
+  getInputText({ detail }) {
+    this.setData({ titleText: detail.value });
+  },
+  // 选择列表
+  selectItem(event) {
+    const dataset = event.currentTarget.dataset;
+    this.setData({
+      active: false,
+      selectTitle: dataset.title
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad(options) {
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady() {
   
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow() {
   
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide() {
   
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload() {
   
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh() {
   
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom() {
   
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage() {
   
   }
 })
