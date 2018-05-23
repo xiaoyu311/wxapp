@@ -35,6 +35,7 @@ Page({
       data => {
         wx.hideToast();
         if (data.status == 1) {
+          // wx.setStorageSync('xiaoyu_sessionId': );
           wx.reLaunch({
             url: '/pages/index/index'
           });
