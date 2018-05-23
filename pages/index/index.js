@@ -7,6 +7,11 @@ Page({
   data: {
     articleList: []
   },
+  goLog() {
+    wx.navigateTo({
+      url: '/pages/logs/logs',
+    });
+  },
   onLoad() {
     article_list(
       data => {

@@ -80,3 +80,17 @@
 .textarea_content {
   font-size: 28rpx;
 }
+.btn_container {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+  background: #2196F3;
+  border-radius: 15rpx;
+}
+.btn_text {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #fff;
+}

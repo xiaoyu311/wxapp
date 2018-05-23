@@ -1,5 +1,5 @@
 // pages/publish/publish.js
-import { article_list } from '../../lib/js/server.js';
+import { article_add } from '../../lib/js/server.js';
 const app = getApp();
 
 Page({
@@ -8,9 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    active: false,
-    selectTitle: '请选择',
-    titleText: ''
+    active: false, // 激活选择列表
+    selectTitle: '请选择', // 选择的显示标题
+    selectValue: '', // 选择的值
+    titleText: '', // 标题
+    contentText: '' // 内容
   },
   // 显示下拉类型
   Select() {
@@ -24,12 +26,74 @@ Page({
   },
   // 选择列表
   selectItem(event) {
-    console.log(app)
     const dataset = event.currentTarget.dataset;
     this.setData({
       active: false,
+      selectValue: dataset.value,
       selectTitle: dataset.title
     });
+  },
+  // 内容输入
+  bindTextArea({ detail }) {
+    this.setData({ contentText: detail.value });
+  },
+  // 文章发表
+  Publish() {
+    const { titleText, contentText, selectValue } = this.data;
+    if (!titleText) {
+      wx.showToast({
+        title: '请填写titleText',
+        icon: 'none'
+      });
+      return;
+    }
+    if (!selectValue) {
+      wx.showToast({
+        title: '请选择selectValue',
+        icon: 'none'
+      });
+      return;
+    }
+    if (!contentText) {
+      wx.showToast({
+        title: '请填写contentText',
+        icon: 'none'
+      });
+      return;
+    }
+    wx.showLoading({
+      title: '发表中...',
+      mask: true
+    });
+    article_add(
+      data => {
+        wx.hideLoading();
+        if (data.status == 1) {
+          wx.showToast({
+            title: data.message,
+          });
+          this.setData({
+            active: false, // 激活选择列表
+            selectTitle: '请选择', // 选择的显示标题
+            selectValue: '', // 选择的值
+            titleText: '', // 标题
+            contentText: '' // 内容
+          });
+          return;
+        }
+        if (data.status == 0) {
+          wx.navigateTo({
+            url: '/pages/login/login',
+          });
+        }
+      },
+      () => {
+        wx.hideLoading();
+      },
+      titleText,
+      contentText,
+      selectValue
+    );
   },
   /**
    * 生命周期函数--监听页面加载

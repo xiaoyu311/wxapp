@@ -6,8 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    user: '',
-    pass: ''
+    user: 's',
+    pass: 's'
   },
 
   //获取用户名
@@ -27,22 +27,25 @@ Page({
 
   // 登录
   Login() {
-    wx.reLaunch({
-      url: '../../pages/index/index'
-    })
-    console.log(getCurrentPages())
-    // Login(
-    //   data => {
-    //     if (data.status == 1) {
-    //       wx.switchTab({
-    //         url: 'pages/index/index'
-    //       });
-    //     }
-    //   },
-    //   () => {},
-    //   this.data.user,
-    //   this.data.pass
-    // );
+    wx.showLoading({
+      title: '登录中...',
+      mask: true
+    });
+    Login(
+      data => {
+        wx.hideToast();
+        if (data.status == 1) {
+          wx.reLaunch({
+            url: '/pages/index/index'
+          });
+        }
+      },
+      () => {
+        wx.hideToast();
+      },
+      this.data.user,
+      this.data.pass
+    );
   },
 
   /**

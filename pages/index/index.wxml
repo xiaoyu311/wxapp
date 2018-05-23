@@ -2,7 +2,7 @@
 <view class="container">
   <view class='homeNav'>
     <view class='navList'>
-      <text class='activeTab'>全部</text>
+      <text catchtap='goLog' class='activeTab'>全部</text>
       <text class='navItem'>精华</text>
       <text class='navItem'>分享</text>
       <text class='navItem'>问答</text>
