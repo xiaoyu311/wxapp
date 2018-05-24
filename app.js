@@ -1,24 +1,28 @@
 //app.js
 App({
   onLaunch: function () {
-    wx.request({
-      url: 'https://m.xxiaoyu.com/getcookie',
-      method: 'GET',
-      header: {
-        'content-type': 'application/json', // 默认值
-        //'cookie': wx.getStorageSync("xiaoyu_sessionID")//读取cookie
-      },
-      success(res) {
-        try {
-          let cookie = res.header['set-cookie'];
-          let index = cookie.indexOf(';');
-          wx.setStorageSync('xiaoyu_sessionID', cookie.slice(0, index));
-        } catch(err) {
-          throw new Error('设置cookie失败');
-          return;
-        }
-      }
-    })
+    // wx.request({
+    //   url: 'https://m.xxiaoyu.com/getcookie',
+    //   method: 'GET',
+    //   header: {
+    //     'content-type': 'application/json', // 默认值
+    //   },
+    //   success(res) {
+    //     console.log(res)
+    //     try {
+    //       let cookie = res.header['set-cookie'];
+    //       let index = cookie.indexOf(';');
+    //       wx.setStorageSync('xiaoyu_sessionID', cookie.slice(0, index));
+    //     } catch (err) {
+    //       throw new Error('设置cookie失败');
+    //       return;
+    //     }
+    //   },
+    //   fail() {
+    //     throw new Error('获取cookie失败');
+    //     return;
+    //   }
+    // })
     // 展示本地存储能力
     // var logs = wx.getStorageSync('logs') || []
     // logs.unshift(Date.now())

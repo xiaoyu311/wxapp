@@ -39,9 +39,9 @@
   transition: left 0.3s;
 }
 
-.lists {
+/* .lists {
   width: 100%;
-}
+} */
 
 .topic_cell {
   width: 92%;
@@ -92,7 +92,7 @@
   color: #999;
 }
 
-.top_wrap {
+.tab_type {
   width: 78rpx;
   height: 48rpx;
   display: flex;
@@ -107,6 +107,12 @@
   color: #858383;
   font-weight: 600;
 }
+.top_active {
+  border: 1rpx solid #2196F3;
+}
+.top_text_active {
+  color: #2196F3;
+}
 
 .title_wrap {
   margin: 0rpx 20rpx;
@@ -118,8 +124,9 @@
 }
 
 .title_text {
-  font-size: 28rpx;
+  font-size: 30rpx;
   color: #333;
+  font-weight: 600;
 }
 
 .list_foot {

@@ -2,48 +2,54 @@
 <view class="container">
   <view class='homeNav'>
     <view class='navList'>
-      <text catchtap='goLog' class='activeTab'>全部</text>
-      <text class='navItem'>精华</text>
-      <text class='navItem'>分享</text>
-      <text class='navItem'>问答</text>
-      <text class='navItem'>招聘</text>
+      <text wx:for="{{nav}}" wx:key="tab" class='activeTab'>{{item.title}}</text>
       <text class='navItem'>测试</text>
     </view>
     <view class='nav-bottom'></view>
   </view>
-  <view class='lists'>
-    <view class='topic_cell'>
-      <view class='author'>
-        <view class='author_first'>
-          <view class='topic_cell_avatar'>
-            <image class='img' mode="widthFix" src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
+  <!-- <view class='lists'> -->
+  <swiper bindchange="switchTab" style="height:1500rpx">
+    <swiper-item wx:for="{{nav}}" wx:key="tab">
+      <view wx:for='{{articleList}}' wx:key='article_id' class='topic_cell'>
+        <view class='author'>
+          <view class='author_first'>
+            <view class='topic_cell_avatar'>
+              <image class='img' mode="widthFix" src='{{item.author.avatar_url}}'></image>
+            </view>
+            <view class='time_wrap'>
+              <text class='author_text'>{{item.author.loginname}}</text>
+              <text class='time_text'>{{item.create_at}}毫秒前</text>
+            </view>
           </view>
-          <view class='time_wrap'>
-            <text class='author_text'>aojiaotage天</text>
-            <text class='time_text'>19天前</text>
+          <view class='top_wrap'>
+            <view class='{{ item.top ? "tab_type top_active" : "tab_type"}}'>
+              <text class='{{item.top ? "top_text top_text_active" : "top_text"}}'>{{item.top ? '置顶' : navItems[item.tab]}}</text>
+            </view>
+            <view style='margin-top: 20rpx;' class='tab_type'>
+              <text class='top_text'>收藏</text>
+            </view>
           </view>
         </view>
-        <view class='top_wrap'>
-          <text class='top_text'>置顶</text>
+        <view class='title_wrap'>
+          <text class='title_text'>{{item.title}}</text>
+        </view>
+        <view class='list_foot'>
+          <view class='list_item'>
+            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
+            <text class='list_text'>{{item.reply_count}}</text>
+          </view>
+          <view class='list_item'>
+            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
+            <text class='list_text'>{{item.visit_count}}</text>
+          </view>
+          <view class='list_item'>
+            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
+            <text class='list_text'>{{item.last_reply_at}}</text>
+          </view>
         </view>
       </view>
-      <view class='title_wrap'>
-        <text class='title_text'>【NODE PARTY】【上海】最近好像没有上海NodeParty，想来组织一个</text>
-      </view>
-      <view class='list_foot'>
-        <view class='list_item'>
-          <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-          <text class='list_text'>302</text>
-        </view>
-        <view class='list_item'>
-          <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-          <text class='list_text'>302</text>
-        </view>
-         <view class='list_item'>
-          <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-          <text class='list_text'>302</text>
-        </view>
-      </view>
-    </view>
-  </view>
+    </swiper-item>
+  </swiper>
+
+  <!-- </view> -->
 </view>

@@ -73,7 +73,6 @@ Page({
             title: data.message,
           });
           this.setData({
-            active: false, // 激活选择列表
             selectTitle: '请选择', // 选择的显示标题
             selectValue: '', // 选择的值
             titleText: '', // 标题
@@ -91,8 +90,8 @@ Page({
         wx.hideLoading();
       },
       titleText,
-      contentText,
-      selectValue
+      selectValue,
+      contentText
     );
   },
   /**
