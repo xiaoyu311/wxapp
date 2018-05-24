@@ -13,6 +13,9 @@
         <text bindtap='Select' class='select_title'>{{selectTitle}}</text>
       </view>
       <view class='{{active ? "active" : "unactive"}}' style='position: absolute; width: 100%;'>
+        <view catchtap='selectItem' data-title="{{'分享'}}" data-value="{{'share'}}" style='background: #fff;'>
+          <text class="content">分享</text>
+        </view>
         <view catchtap='selectItem' data-title="{{'招聘'}}" data-value="{{'job'}}" style='background: #fff;'>
           <text class="content">招聘</text>
         </view>
@@ -21,9 +24,6 @@
         </view>
         <view catchtap='selectItem' data-title="{{'问答'}}" data-value="{{'ask'}}" style='background: #fff;'>
           <text class="content">问答</text>
-        </view>
-        <view style='background: #fff;'>
-          <text class="content">排序</text>
         </view>
       </view>
     </view>
