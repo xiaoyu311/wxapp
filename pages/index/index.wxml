@@ -7,7 +7,7 @@
     </view>
     <view class='nav-bottom'></view>
   </view>
-  <!-- <view class='lists'> -->
+  <!-- <view class='lists'> -->   
   <swiper bindchange="switchTab" style="height:1500rpx">
     <swiper-item wx:for="{{nav}}" wx:key="tab">
       <view wx:for='{{articleList}}' wx:key='article_id' class='topic_cell'>
