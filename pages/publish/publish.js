@@ -1,5 +1,7 @@
 // pages/publish/publish.js
-import { article_add } from '../../lib/js/server.js';
+import {
+  article_add
+} from '../../lib/js/server.js';
 const app = getApp();
 
 Page({
@@ -21,8 +23,12 @@ Page({
     });
   },
   // 标题内容
-  getInputText({ detail }) {
-    this.setData({ titleText: detail.value });
+  getInputText({
+    detail
+  }) {
+    this.setData({
+      titleText: detail.value
+    });
   },
   // 选择列表
   selectItem(event) {
@@ -34,12 +40,20 @@ Page({
     });
   },
   // 内容输入
-  bindTextArea({ detail }) {
-    this.setData({ contentText: detail.value });
+  bindTextArea({
+    detail
+  }) {
+    this.setData({
+      contentText: detail.value
+    });
   },
   // 文章发表
   Publish() {
-    const { titleText, contentText, selectValue } = this.data;
+    const {
+      titleText,
+      contentText,
+      selectValue
+    } = this.data;
     if (!titleText) {
       wx.showToast({
         title: '请填写titleText',
@@ -98,55 +112,55 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-   
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide() {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-  
+
   }
 })

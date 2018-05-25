@@ -25,20 +25,20 @@
       "text": "首页"
     }, {
       "pagePath": "pages/publish/publish",
-      "iconPath": "images/home-off.png",
-      "selectedIconPath": "images/home-on.png",
+      "iconPath": "images/publish-off.png",
+      "selectedIconPath": "images/publish-on.png",
       "text": "发表"
     },
     {
       "pagePath": "pages/index/index",
-      "iconPath": "images/home-off.png",
-      "selectedIconPath": "images/home-on.png",
+      "iconPath": "images/news-off.png",
+      "selectedIconPath": "images/news-on.png",
       "text": "消息"
     },
     {
       "pagePath": "pages/index/index",
-      "iconPath": "images/home-off.png",
-      "selectedIconPath": "images/home-on.png",
+      "iconPath": "images/me-off.png",
+      "selectedIconPath": "images/me-on.png",
       "text": "我的"
     }]
   }

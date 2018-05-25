@@ -1,6 +1,8 @@
 //index.js
 //获取应用实例
-import { article_list } from '../../lib/js/server.js';
+import {
+  article_list
+} from '../../lib/js/server.js';
 const app = getApp();
 
 Page({
@@ -19,25 +21,46 @@ Page({
       job: '招聘',
       test: '测试',
     },
-    nav: [
-      { title: '全部', tab: 'all' },
-      { title: '精华', tab: 'good' },
-      { title: '分享', tab: 'share' },
-      { title: '问答', tab: 'ask' },
-      { title: '招聘', tab: 'job' },
-      { title: '测试', tab: 'test' },
+    nav: [{
+        title: '全部',
+        tab: 'all'
+      },
+      {
+        title: '精华',
+        tab: 'good'
+      },
+      {
+        title: '分享',
+        tab: 'share'
+      },
+      {
+        title: '问答',
+        tab: 'ask'
+      },
+      {
+        title: '招聘',
+        tab: 'job'
+      },
+      {
+        title: '测试',
+        tab: 'test'
+      },
     ],
     current: '', // 当前滑块的索引值
   },
   // 点击nav
-  handleNav({ currentTarget }) {
+  handleNav({
+    currentTarget
+  }) {
     this.setData({
       current: currentTarget.dataset.index,
       HeightSwiper: this.computedHeight(currentTarget.dataset.index)
     });
   },
   // 滑动
-  switchTab({ detail }) {
+  switchTab({
+    detail
+  }) {
     this.setData({
       current: detail.current,
       HeightSwiper: this.computedHeight(detail.current)
@@ -46,7 +69,13 @@ Page({
   },
   // 根据index计算swiper高度
   computedHeight(index) {
-    const { AllList, ShareList, AskList, JobList, TestList } = this.data;
+    const {
+      AllList,
+      ShareList,
+      AskList,
+      JobList,
+      TestList
+    } = this.data;
     let length;
     if (index == 2) {
       length = ShareList.length;
@@ -75,7 +104,7 @@ Page({
           let AskList = res.data.filter(item => item.tab == 'ask');
           let JobList = res.data.filter(item => item.tab == 'job');
           let TestList = res.data.filter(item => item.tab == 'test')
-          this.setData({ 
+          this.setData({
             AllList: res.data,
             ShareList,
             AskList,
