@@ -1,6 +1,6 @@
 /**index.wxss**/
-@import '../../lib/style/common.wxss';
 
+@import '../../lib/style/common.wxss';
 .homeNav {
   position: relative;
   height: 86rpx;
@@ -114,9 +114,20 @@
   color: #858383;
   font-weight: 600;
 }
+.collect_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collect_img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
 .top_active {
   border: 1rpx solid #2196F3;
 }
+
 .top_text_active {
   color: #2196F3;
 }
@@ -124,7 +135,7 @@
 .title_wrap {
   box-sizing: border-box;
   height: 80rpx;
-  padding: 0 20rpx 20rpx 20rpx; 
+  padding: 0 20rpx 20rpx 20rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

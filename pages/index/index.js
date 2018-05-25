@@ -47,6 +47,7 @@ Page({
       },
     ],
     current: '', // 当前滑块的索引值
+    collected: false
   },
   // 点击nav
   handleNav({
@@ -66,6 +67,12 @@ Page({
       HeightSwiper: this.computedHeight(detail.current)
     });
     // console.log(detail)
+  },
+  // 点击收藏
+  handleCollect() {
+    this.setData({
+      collected: !this.data.collected
+    });
   },
   // 根据index计算swiper高度
   computedHeight(index) {

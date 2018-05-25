@@ -23,8 +23,9 @@
             <view class='{{ item.top ? "tab_type top_active" : "tab_type"}}'>
               <text class='{{item.top ? "top_text top_text_active" : "top_text"}}'>{{item.top ? '置顶' : navItems[item.tab]}}</text>
             </view>
-            <view class='tab_type'>
-              <text class='top_text'>收藏</text>
+            <view catchtap='handleCollect' class='collect_wrap'>
+              <image wx:if='{{collected}}' class='collect_img' mode='widthFix'  src='../../images/collect-on.png'></image>
+              <image wx:else class='collect_img' mode='widthFix'  src='../../images/collect-off.png'></image>
             </view>
           </view>
         </view>
