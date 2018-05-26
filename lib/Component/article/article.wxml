@@ -7,14 +7,14 @@
         </view>
         <view class='time_wrap'>
           <text class='author_text'>{{articleInfo.author.loginname}}</text>
-          <text class='time_text'>{{articleInfo.create_at}}毫秒前</text>
+          <text class='time_text'>{{create_at}}</text>
         </view>
       </view>
       <view class='top_wrap'>
         <view class='{{ articleInfo.top ? "tab_type top_active" : "tab_type"}}'>
           <view class='{{articleInfo.top ? "top_text top_text_active" : "top_text"}}'>{{articleInfo.top ? '置顶' : navItems[articleInfo.tab]}}</view>
         </view>
-        <view catchtap='handleCollect' class='collect_wrap'>
+        <view catchtap='handleCollect' data-article_id='{{articleInfo.article_id}}' class='collect_wrap'>
           <image wx:if='{{collected}}' class='collect_img' mode='widthFix'  src='../../../images/collect-on.png'></image>
           <image wx:else class='collect_img' mode='widthFix'  src='../../../images/collect-off.png'></image>
         </view>
