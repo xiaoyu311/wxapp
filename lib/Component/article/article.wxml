@@ -1,0 +1,40 @@
+<!-- 这是自定义组件的内部WXML结构 -->
+<view class='topic_cell'>
+    <view class='author'>
+      <view class='author_first'>
+        <view class='topic_cell_avatar'>
+          <image class='img' mode="widthFix" src='{{articleInfo.author.avatar_url}}'></image>
+        </view>
+        <view class='time_wrap'>
+          <text class='author_text'>{{articleInfo.author.loginname}}</text>
+          <text class='time_text'>{{articleInfo.create_at}}毫秒前</text>
+        </view>
+      </view>
+      <view class='top_wrap'>
+        <view class='{{ articleInfo.top ? "tab_type top_active" : "tab_type"}}'>
+          <view class='{{articleInfo.top ? "top_text top_text_active" : "top_text"}}'>{{articleInfo.top ? '置顶' : navItems[articleInfo.tab]}}</view>
+        </view>
+        <view catchtap='handleCollect' class='collect_wrap'>
+          <image wx:if='{{collected}}' class='collect_img' mode='widthFix'  src='../../../images/collect-on.png'></image>
+          <image wx:else class='collect_img' mode='widthFix'  src='../../../images/collect-off.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='title_wrap'>
+      <text class='title_text'>{{articleInfo.title}}</text>
+    </view>
+    <view class='list_foot'>
+      <view class='list_item'>
+        <image mode="widthFix" class='list_img' src='../../../images/message-off.png'></image>
+        <text class='list_text'>{{articleInfo.reply_count}}</text>
+      </view>
+      <view class='list_item'>
+        <image mode="widthFix" class='list_img' src='../../../images/check-off.png'></image>
+        <text class='list_text'>{{articleInfo.visit_count}}</text>
+      </view>
+      <view class='list_item'>
+        <image mode="widthFix" class='list_img' src='../../../images/time-off.png'></image>
+        <text class='list_text'>{{articleInfo.last_reply_at}}</text>
+      </view>
+    </view>
+  </view>

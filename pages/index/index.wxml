@@ -8,244 +8,33 @@
   </view>
   <swiper current='{{current}}' bindchange="switchTab" style="{{'height:' + (330 * HeightSwiper + 20) + 'rpx'}}">
     <swiper-item>
-      <view wx:for='{{AllList}}' wx:key='article_id' class='topic_cell'>
-        <view class='author'>
-          <view class='author_first'>
-            <view class='topic_cell_avatar'>
-              <image class='img' mode="widthFix" src='{{item.author.avatar_url}}'></image>
-            </view>
-            <view class='time_wrap'>
-              <text class='author_text'>{{item.author.loginname}}</text>
-              <text class='time_text'>{{item.create_at}}毫秒前</text>
-            </view>
-          </view>
-          <view class='top_wrap'>
-            <view class='{{ item.top ? "tab_type top_active" : "tab_type"}}'>
-              <text class='{{item.top ? "top_text top_text_active" : "top_text"}}'>{{item.top ? '置顶' : navItems[item.tab]}}</text>
-            </view>
-            <view catchtap='handleCollect' class='collect_wrap'>
-              <image wx:if='{{collected}}' class='collect_img' mode='widthFix'  src='../../images/collect-on.png'></image>
-              <image wx:else class='collect_img' mode='widthFix'  src='../../images/collect-off.png'></image>
-            </view>
-          </view>
-        </view>
-        <view class='title_wrap'>
-          <text class='title_text'>{{item.title}}</text>
-        </view>
-        <view class='list_foot'>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.reply_count}}</text>
-          </view>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.visit_count}}</text>
-          </view>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.last_reply_at}}</text>
-          </view>
-        </view>
+      <view wx:key="article_id" wx:for="{{AllList}}">
+        <article-list article-info="{{item}}"></article-list>
       </view>
     </swiper-item>
     <swiper-item>
-      <view wx:for='{{AllList}}' wx:key='article_id' class='topic_cell'>
-        <view class='author'>
-          <view class='author_first'>
-            <view class='topic_cell_avatar'>
-              <image class='img' mode="widthFix" src='{{item.author.avatar_url}}'></image>
-            </view>
-            <view class='time_wrap'>
-              <text class='author_text'>{{item.author.loginname}}</text>
-              <text class='time_text'>{{item.create_at}}毫秒前</text>
-            </view>
-          </view>
-          <view class='top_wrap'>
-            <view class='{{ item.top ? "tab_type top_active" : "tab_type"}}'>
-              <text class='{{item.top ? "top_text top_text_active" : "top_text"}}'>{{item.top ? '置顶' : navItems[item.tab]}}</text>
-            </view>
-            <view class='tab_type'>
-              <text class='top_text'>收藏</text>
-            </view>
-          </view>
-        </view>
-        <view class='title_wrap'>
-          <text class='title_text'>{{item.title}}</text>
-        </view>
-        <view class='list_foot'>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.reply_count}}</text>
-          </view>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.visit_count}}</text>
-          </view>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.last_reply_at}}</text>
-          </view>
-        </view>
+      <view wx:key="article_id" wx:for="{{AllList}}">
+        <article-list article-info="{{item}}"></article-list>
       </view>
     </swiper-item>
     <swiper-item>
-      <view wx:for='{{ShareList}}' wx:key='article_id' class='topic_cell'>
-        <view class='author'>
-          <view class='author_first'>
-            <view class='topic_cell_avatar'>
-              <image class='img' mode="widthFix" src='{{item.author.avatar_url}}'></image>
-            </view>
-            <view class='time_wrap'>
-              <text class='author_text'>{{item.author.loginname}}</text>
-              <text class='time_text'>{{item.create_at}}毫秒前</text>
-            </view>
-          </view>
-          <view class='top_wrap'>
-            <view class='{{ item.top ? "tab_type top_active" : "tab_type"}}'>
-              <text class='{{item.top ? "top_text top_text_active" : "top_text"}}'>{{item.top ? '置顶' : navItems[item.tab]}}</text>
-            </view>
-            <view class='tab_type'>
-              <text class='top_text'>收藏</text>
-            </view>
-          </view>
-        </view>
-        <view class='title_wrap'>
-          <text class='title_text'>{{item.title}}</text>
-        </view>
-        <view class='list_foot'>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.reply_count}}</text>
-          </view>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.visit_count}}</text>
-          </view>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.last_reply_at}}</text>
-          </view>
-        </view>
+      <view wx:key="article_id" wx:for="{{ShareList}}">
+        <article-list article-info="{{item}}"></article-list>
       </view>
     </swiper-item>
     <swiper-item>
-      <view wx:for='{{AskList}}' wx:key='article_id' class='topic_cell'>
-        <view class='author'>
-          <view class='author_first'>
-            <view class='topic_cell_avatar'>
-              <image class='img' mode="widthFix" src='{{item.author.avatar_url}}'></image>
-            </view>
-            <view class='time_wrap'>
-              <text class='author_text'>{{item.author.loginname}}</text>
-              <text class='time_text'>{{item.create_at}}毫秒前</text>
-            </view>
-          </view>
-          <view class='top_wrap'>
-            <view class='{{ item.top ? "tab_type top_active" : "tab_type"}}'>
-              <text class='{{item.top ? "top_text top_text_active" : "top_text"}}'>{{item.top ? '置顶' : navItems[item.tab]}}</text>
-            </view>
-            <view class='tab_type'>
-              <text class='top_text'>收藏</text>
-            </view>
-          </view>
-        </view>
-        <view class='title_wrap'>
-          <text class='title_text'>{{item.title}}</text>
-        </view>
-        <view class='list_foot'>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.reply_count}}</text>
-          </view>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.visit_count}}</text>
-          </view>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.last_reply_at}}</text>
-          </view>
-        </view>
+      <view wx:key="article_id" wx:for="{{AskList}}">
+        <article-list article-info="{{item}}"></article-list>
       </view>
     </swiper-item>
     <swiper-item>
-      <view wx:for='{{JobList}}' wx:key='article_id' class='topic_cell'>
-        <view class='author'>
-          <view class='author_first'>
-            <view class='topic_cell_avatar'>
-              <image class='img' mode="widthFix" src='{{item.author.avatar_url}}'></image>
-            </view>
-            <view class='time_wrap'>
-              <text class='author_text'>{{item.author.loginname}}</text>
-              <text class='time_text'>{{item.create_at}}毫秒前</text>
-            </view>
-          </view>
-          <view class='top_wrap'>
-            <view class='{{ item.top ? "tab_type top_active" : "tab_type"}}'>
-              <text class='{{item.top ? "top_text top_text_active" : "top_text"}}'>{{item.top ? '置顶' : navItems[item.tab]}}</text>
-            </view>
-            <view class='tab_type'>
-              <text class='top_text'>收藏</text>
-            </view>
-          </view>
-        </view>
-        <view class='title_wrap'>
-          <text class='title_text'>{{item.title}}</text>
-        </view>
-        <view class='list_foot'>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.reply_count}}</text>
-          </view>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.visit_count}}</text>
-          </view>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.last_reply_at}}</text>
-          </view>
-        </view>
+      <view wx:key="article_id" wx:for="{{JobList}}">
+        <article-list article-info="{{item}}"></article-list>
       </view>
     </swiper-item>
     <swiper-item>
-      <view wx:for='{{TestList}}' wx:key='article_id' class='topic_cell'>
-        <view class='author'>
-          <view class='author_first'>
-            <view class='topic_cell_avatar'>
-              <image class='img' mode="widthFix" src='{{item.author.avatar_url}}'></image>
-            </view>
-            <view class='time_wrap'>
-              <text class='author_text'>{{item.author.loginname}}</text>
-              <text class='time_text'>{{item.create_at}}毫秒前</text>
-            </view>
-          </view>
-          <view class='top_wrap'>
-            <view class='{{ item.top ? "tab_type top_active" : "tab_type"}}'>
-              <text class='{{item.top ? "top_text top_text_active" : "top_text"}}'>{{item.top ? '置顶' : navItems[item.tab]}}</text>
-            </view>
-            <view class='tab_type'>
-              <text class='top_text'>收藏</text>
-            </view>
-          </view>
-        </view>
-        <view class='title_wrap'>
-          <text class='title_text'>{{item.title}}</text>
-        </view>
-        <view class='list_foot'>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.reply_count}}</text>
-          </view>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.visit_count}}</text>
-          </view>
-          <view class='list_item'>
-            <image mode="widthFix" class='list_img' src='https://avatars3.githubusercontent.com/u/8339316?v=4&s=120'></image>
-            <text class='list_text'>{{item.last_reply_at}}</text>
-          </view>
-        </view>
+      <view wx:key="article_id" wx:for="{{TestList}}">
+        <article-list article-info="{{item}}"></article-list>
       </view>
     </swiper-item>
   </swiper>

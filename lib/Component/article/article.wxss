@@ -1,0 +1,138 @@
+/* 这里的样式只应用于这个自定义组件 */
+.topic_cell {
+  box-sizing: border-box;
+  width: 92%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-radius: 40rpx;
+  box-shadow: 0 4rpx 6rpx 6rpx #eee;
+  background: #fff;
+}
+
+.topic_cell_avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+
+.topic_cell .img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+
+.author {
+  box-sizing: border-box;
+  height: 160rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.author_first {
+  display: flex;
+}
+
+.time_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20rpx;
+}
+
+.author_text {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.time_text {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.top_wrap {
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tab_type {
+  width: 78rpx;
+  height: 48rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #858383;
+  border-radius: 8rpx;
+}
+
+.top_text {
+  font-size: 28rpx;
+  color: #858383;
+  font-weight: 600;
+}
+.top_active {
+  border: 1rpx solid #2196F3;
+}
+
+.top_text_active {
+  color: #2196F3;
+}
+.collect_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collect_img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.title_wrap {
+  box-sizing: border-box;
+  height: 80rpx;
+  padding: 0 20rpx 20rpx 20rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-bottom: 2rpx solid #eee;
+}
+
+.title_text {
+  display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.list_foot {
+  box-sizing: border-box;
+  height: 70rpx;
+  display: flex;
+  padding: 20rpx;
+  justify-content: space-between;
+}
+
+.list_item {
+  display: flex;
+  align-items: center;
+}
+
+.list_img {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 22rpx;
+}
+
+.list_text {
+  display: inline-block;
+  margin-left: 10rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #858383;
+}

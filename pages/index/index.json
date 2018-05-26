@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "article-list": "/lib/Component/article/article"
+  }
+}

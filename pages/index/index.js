@@ -13,14 +13,6 @@ Page({
     AskList: [],
     JobList: [],
     TestList: [],
-    navItems: {
-      all: '全部',
-      good: '精华',
-      share: '分享',
-      ask: '问答',
-      job: '招聘',
-      test: '测试',
-    },
     nav: [{
         title: '全部',
         tab: 'all'
@@ -47,7 +39,6 @@ Page({
       },
     ],
     current: '', // 当前滑块的索引值
-    collected: false
   },
   // 点击nav
   handleNav({
@@ -67,12 +58,6 @@ Page({
       HeightSwiper: this.computedHeight(detail.current)
     });
     // console.log(detail)
-  },
-  // 点击收藏
-  handleCollect() {
-    this.setData({
-      collected: !this.data.collected
-    });
   },
   // 根据index计算swiper高度
   computedHeight(index) {
