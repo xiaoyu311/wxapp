@@ -7,7 +7,7 @@
         </view>
         <view class='time_wrap'>
           <text class='author_text'>{{articleInfo.author.loginname}}</text>
-          <text class='time_text'>{{create_at}}</text>
+          <text class='time_text'>{{articleInfo.create_at}}</text>
         </view>
       </view>
       <view class='top_wrap'>

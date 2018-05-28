@@ -1,6 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
+    
   //   wx.request({
   //     url: 'https://m.xxiaoyu.com/getcookie',
   //     method: 'GET',

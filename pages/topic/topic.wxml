@@ -1,0 +1,67 @@
+<!--pages/topic/topic.wxml-->
+
+<view class='container'>
+  <view class='topic_container'>
+    <view class='user_container'>
+      <view class='user_info'>
+        <view class='avatar'>
+          <image class='img' mode='widthFix' src='https://avatars1.githubusercontent.com/u/22312483?v=4&s=120'></image>
+        </view>
+        <view class='user_wrap'>
+          <text class='loginame'>imzengyang</text>
+          <text class='time'>2月前</text>
+        </view>
+      </view>
+      <view class='collect_wrap'>
+        <image class='collect_img' mode='widthFix' src='../../images/collect-off.png'></image>
+      </view>
+    </view>
+    <view class='content_container'>
+      <text class='title'>为社区做贡献，帮社区写自动化测试代码</text>
+      <view class='content_wrap'>
+        <text class='content'>加入cnodejs社区也快1年了，没对社区做过什么贡献，看到社区要公测，刚好自己在公司使用node.js做自动化测试。
+        这次我要对社区贡献一套UI自动化代码，别人如果想自己搭建一套社区的话，可以直接运行这套UI自动化代码来检查UI功能。
+        平时工作时间比较忙，所以本周日我计划要做如下的事情，
+        为了让大家都能看懂我的代码，我会使用行为驱动测试的方式来写代码，完成之后的代码大致如下：
+        </text>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class='replies_title_wrap'>
+      <text class='replies_title'>共77条回复</text>
+    </view>
+    <view>
+      <view class='replies_container'>
+        <view class='user_container'>
+          <view class='user_info'>
+            <view class='avatar'>
+              <image class='img' mode='widthFix' src='https://avatars1.githubusercontent.com/u/22312483?v=4&s=120'></image>
+            </view>
+            <view class='user_wrap'>
+              <text class='loginame'>imzengyang</text>
+              <text class='time'>2月前</text>
+            </view>
+          </view>
+          <view class='collect_wrap'>
+            <text class='index'>1楼</text>
+          </view>
+        </view>
+        <view>
+          <text class='replies_text'>置顶，大家多多参与，cucumber在bdd领域是极其重要的技能，对敏捷认知也会有明显提升，加油</text>
+        </view>
+        <view class='reply_container'>
+          <view></view>
+          <view class='reply_content'>
+            <image mode='widthFix' class='collect_img' src='../../images/collect-off.png'></image>
+            <text class='ups_count'>25</text>
+            <image catchtap='Reply' mode='widthFix' class='collect_img' src='../../images/message-off.png'></image>
+          </view>
+        </view>
+        <view class='{{replyModel ? "reply_model reply_model_show" : "reply_model reply_model_hide"}}'>
+          <text>222</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
