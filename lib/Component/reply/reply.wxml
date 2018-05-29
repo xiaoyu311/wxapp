@@ -1,0 +1,30 @@
+<view class='replies_container'>
+  <view class='user_container'>
+    <view class='user_info'>
+      <view class='avatar'>
+        <image class='img' mode='widthFix' src='https://avatars1.githubusercontent.com/u/22312483?v=4&s=120'></image>
+      </view>
+      <view class='user_wrap'>
+        <text class='loginame'>imzengyang</text>
+        <text class='time'>2月前</text>
+      </view>
+    </view>
+    <view class='collect_wrap'>
+      <text class='index'>1楼</text>
+    </view>
+  </view>
+  <view>
+    <text class='replies_text'>置顶，大家多多参与，cucumber在bdd领域是极其重要的技能，对敏捷认知也会有明显提升，加油</text>
+  </view>
+  <view class='reply_container'>
+    <view></view>
+    <view class='reply_content'>
+      <image mode='widthFix' class='collect_img' src='../../../images/collect-off.png'></image>
+      <text class='ups_count'>25</text>
+      <image catchtap='Reply' mode='widthFix' class='collect_img' src='../../../images/message-off.png'></image>
+    </view>
+  </view>
+  <view class='{{replyModel ? "reply_model reply_model_show" : "reply_model reply_model_hide"}}'>
+    <text>222</text>
+  </view>
+</view>

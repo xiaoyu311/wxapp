@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "reply-list": "/lib/Component/reply/reply"
+  }
+}
