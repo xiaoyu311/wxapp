@@ -2,29 +2,36 @@
   <view class='user_container'>
     <view class='user_info'>
       <view class='avatar'>
-        <image class='img' mode='widthFix' src='https://avatars1.githubusercontent.com/u/22312483?v=4&s=120'></image>
+        <image class='img' mode='widthFix' src='{{replyInfo.author.avatar_url}}'></image>
       </view>
       <view class='user_wrap'>
-        <text class='loginame'>imzengyang</text>
-        <text class='time'>2月前</text>
+        <text class='loginame'>{{replyInfo.author.loginname}}</text>
+        <text class='time'>{{replyInfo.create_at}}</text>
       </view>
     </view>
     <view class='collect_wrap'>
-      <text class='index'>1楼</text>
+      <text class='index'>{{index}}楼</text>
     </view>
   </view>
   <view>
-    <text class='replies_text'>置顶，大家多多参与，cucumber在bdd领域是极其重要的技能，对敏捷认知也会有明显提升，加油</text>
+    <text class='replies_text'>{{replyInfo.content}}</text>
   </view>
   <view class='reply_container'>
     <view></view>
     <view class='reply_content'>
       <image mode='widthFix' class='collect_img' src='../../../images/collect-off.png'></image>
-      <text class='ups_count'>25</text>
+      <text class='ups_count'>{{replyInfo.ups.length}}</text>
       <image catchtap='Reply' mode='widthFix' class='collect_img' src='../../../images/message-off.png'></image>
     </view>
   </view>
   <view class='{{replyModel ? "reply_model reply_model_show" : "reply_model reply_model_hide"}}'>
-    <text>222</text>
+    <view class='input_text'>
+      <input bindinput='bindInput' class='input_content'></input>
+    </view>
+    <view class='btn_wrap'>
+      <text catchtap='Cancel' class='btn'>取 消</text>
+      <text catchtap='Confirm' data-reply_id='{{replyInfo.reply_id}}' class='btn'>回 复</text>
+    </view>
+
   </view>
 </view>

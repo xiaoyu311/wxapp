@@ -1,0 +1,10 @@
+<!--pages/comment/comment.wxml-->
+
+<view  class="write_comment">
+  <view class='textarea_text'>
+    <textarea bindinput='bindTextArea' class='textarea_content'></textarea>
+  </view>
+  <view class='btn_wrap'>
+    <text catchtap='Confirm' class='btn'>回 复</text>
+  </view>
+</view>

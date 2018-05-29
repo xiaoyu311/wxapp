@@ -1,29 +1,41 @@
 
+import { article_info, reply_list } from '../../lib/js/server.js';
+
 Page({
   data: {
-    comment: true,
-    content: ''
+    articleInfo: null,
+    article_id: undefined,
+    replyList: []
+  },
+  onLoad(options) {
+    this.setData({
+      article_id: options.article_id
+    });
+    article_info(
+      res => {
+        this.setData({
+          articleInfo: res.data
+        });
+      },
+      () => {},
+      options.article_id
+    );
+    reply_list(
+      res => {
+        if (res.status == 1) {
+          this.setData({
+            replyList: res.data
+          });
+          console.log(this.data)
+        }
+      },
+      () => {},
+      options.article_id
+    );
   },
   Comment() {
-    this.setData({
-      comment: false
-    }); 
-    console.log(111)
-  },
-  Cancel() {
-    console.log(11111)
-    this.setData({
-      comment: true
+    wx.navigateTo({
+      url: '../../pages/comment/comment?article_id=' + this.data.article_id,
     });
-  },
-  bindTextArea({
-    detail
-  }) {
-    this.setData({
-      content: detail.value
-    });
-  },
-  Confirm() {
-    
   }
 })

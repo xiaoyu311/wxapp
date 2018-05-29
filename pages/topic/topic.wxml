@@ -1,15 +1,15 @@
 <!--pages/topic/topic.wxml-->
 
-<view class='{{comment ? "container topic_wrapper" : "container topic_wrap"}}'>
+<view class="container topic_wrapper">
   <view class='topic_container'>
     <view class='user_container'>
       <view class='user_info'>
         <view class='avatar'>
-          <image class='img' mode='widthFix' src='https://avatars1.githubusercontent.com/u/22312483?v=4&s=120'></image>
+          <image class='img' mode='widthFix' src='{{articleInfo.author.avatar_url}}'></image>
         </view>
         <view class='user_wrap'>
-          <text class='loginame'>imzengyang</text>
-          <text class='time'>2月前</text>
+          <text class='loginame'>{{articleInfo.author.loginname}}</text>
+          <text class='time'>{{articleInfo.create_at}}</text>
         </view>
       </view>
       <view class='collect_wrap'>
@@ -17,34 +17,23 @@
       </view>
     </view>
     <view class='content_container'>
-      <text class='title'>为社区做贡献，帮社区写自动化测试代码</text>
+      <text class='title'>{{articleInfo.title}}</text>
       <view class='content_wrap'>
-        <text class='content'>加入cnodejs社区也快1年了，没对社区做过什么贡献，看到社区要公测，刚好自己在公司使用node.js做自动化测试。
-        这次我要对社区贡献一套UI自动化代码，别人如果想自己搭建一套社区的话，可以直接运行这套UI自动化代码来检查UI功能。
-        平时工作时间比较忙，所以本周日我计划要做如下的事情，
-        为了让大家都能看懂我的代码，我会使用行为驱动测试的方式来写代码，完成之后的代码大致如下：
-        </text>
+        <text class='content'>{{articleInfo.content}}</text>
       </view>
     </view>
   </view>
   <view>
     <view class='replies_title_wrap'>
-      <text class='replies_title'>共77条回复</text>
+      <text class='replies_title'>共{{replyList.length}}条回复</text>
     </view>
     <view>
-      <reply-list></reply-list>
+      <view wx:for="{{replyList}}" wx:for-index="index" wx:key="reply_id">
+        <reply-list reply-info='{{item}}' article_id="{{article_id}}" index="{{index + 1}}"></reply-list>
+      </view>
     </view>
   </view>
-  <view class='{{comment ? "reply_comment_show" : "reply_comment_show reply_comment_hide"}}'>
+  <view class="reply_comment_show">
     <view catchtap='Comment' class='to_speak'>我想说点什么</view>
-  </view>
-  <view  class='{{comment ? "write_comment" : "write_comment write_comment_show"}}'>
-    <view class='textarea_text'>
-      <textarea bindinput='bindTextArea' class='textarea_content'></textarea>
-    </view>
-    <view class='btn_wrap'>
-      <text catchtap='Cancel' class='btn'>取 消</text>
-      <text catchtap='Confirm' class='btn'>回 复</text>
-    </view>
   </view>
 </view>

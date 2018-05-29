@@ -1,5 +1,5 @@
 <!-- 这是自定义组件的内部WXML结构 -->
-<view class='topic_cell'>
+<view catchtap='Content' data-article_id='{{articleInfo.article_id}}' class='topic_cell'>
     <view class='author'>
       <view class='author_first'>
         <view class='topic_cell_avatar'>
