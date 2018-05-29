@@ -1,6 +1,6 @@
 <!--pages/topic/topic.wxml-->
 
-<view class='container'>
+<view class='{{comment ? "container topic_wrapper" : "container topic_wrap"}}'>
   <view class='topic_container'>
     <view class='user_container'>
       <view class='user_info'>
@@ -33,6 +33,18 @@
     </view>
     <view>
       <reply-list></reply-list>
+    </view>
+  </view>
+  <view class='{{comment ? "reply_comment_show" : "reply_comment_show reply_comment_hide"}}'>
+    <view catchtap='Comment' class='to_speak'>我想说点什么</view>
+  </view>
+  <view  class='{{comment ? "write_comment" : "write_comment write_comment_show"}}'>
+    <view class='textarea_text'>
+      <textarea bindinput='bindTextArea' class='textarea_content'></textarea>
+    </view>
+    <view class='btn_wrap'>
+      <text catchtap='Cancel' class='btn'>取 消</text>
+      <text catchtap='Confirm' class='btn'>回 复</text>
     </view>
   </view>
 </view>
