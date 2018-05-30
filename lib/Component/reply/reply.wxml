@@ -1,6 +1,6 @@
 <view class='replies_container'>
   <view class='user_container'>
-    <view class='user_info'>
+    <view class='user_info'> 
       <view class='avatar'>
         <image class='img' mode='widthFix' src='{{replyInfo.author.avatar_url}}'></image>
       </view>
@@ -14,6 +14,7 @@
     </view>
   </view>
   <view>
+    <text wx:if='{{replyInfo.Reply_loginame}}' class='replies_text replies_text_name'>{{'@' + replyInfo.Reply_loginame}}</text>
     <text class='replies_text'>{{replyInfo.content}}</text>
   </view>
   <view class='reply_container'>
@@ -26,7 +27,7 @@
   </view>
   <view class='{{replyModel ? "reply_model reply_model_show" : "reply_model reply_model_hide"}}'>
     <view class='input_text'>
-      <input bindinput='bindInput' class='input_content'></input>
+      <input bindinput='bindInput' placeholder-class='placeholder' placeholder='{{"@" + replyInfo.author.loginname}}' class='input_content'></input>
     </view>
     <view class='btn_wrap'>
       <text catchtap='Cancel' class='btn'>取 消</text>

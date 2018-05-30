@@ -23,10 +23,19 @@ Page({
     reply_list(
       res => {
         if (res.status == 1) {
-          this.setData({
-            replyList: res.data
+          let replyList = res.data.map(item => { 
+            if (item.Reply_id) {
+              let Reply_loginame;
+              res.data.forEach(value => {
+                if (value.reply_id == item.Reply_id) {
+                  Reply_loginame = value.author.loginname;
+                }
+              });
+              item['Reply_loginame'] = Reply_loginame;
+            }
+            return item;
           });
-          console.log(this.data)
+          this.setData({ replyList });
         }
       },
       () => {},
