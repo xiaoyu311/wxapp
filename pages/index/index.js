@@ -1,7 +1,8 @@
 //index.js
 //获取应用实例
 import {
-  article_list
+  article_list,
+  not_has_read
 } from '../../lib/js/server.js';
 const app = getApp();
 
@@ -84,6 +85,12 @@ Page({
   },
   // 列表加载
   onLoad() {
+    not_has_read(
+      res => {
+        console.log(res)
+      },
+      () => {}
+    );
     wx.showLoading({
       title: '加载中...',
       mask: true

@@ -1,4 +1,5 @@
 //app.js
+import { Login } from './lib/js/server.js';
 App({
   onLaunch: function () {
     
@@ -9,11 +10,17 @@ App({
         'content-type': 'application/json', // 默认值
       },
       success(res) {
-        console.log(res)
         try {
           let cookie = res.header['set-cookie'];
           let index = cookie.indexOf(';');
           wx.setStorageSync('xiaoyu_sessionID', cookie.slice(0, index));
+          Login(
+            res => {console.log(res)},
+            () => {},
+            's',
+            's'
+          )
+
         } catch (err) {
           throw new Error('设置cookie失败');
           return;
