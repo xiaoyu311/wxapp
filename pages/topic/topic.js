@@ -5,7 +5,7 @@ Page({
   data: {
     articleInfo: null,
     article_id: undefined,
-    replyList: []
+    replyList: [] 
   },
   onLoad(options) {
     this.setData({
