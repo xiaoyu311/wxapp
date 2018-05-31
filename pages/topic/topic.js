@@ -16,7 +16,7 @@ Page({
         this.setData({
           articleInfo: res.data
         });
-      },
+      },   
       () => {},
       options.article_id
     );
