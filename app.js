@@ -1,8 +1,10 @@
 //app.js
-import { Login } from './lib/js/server.js';
+import {
+  Login
+} from './lib/js/server.js';
 App({
   onLaunch: function () {
-    
+
     wx.request({
       url: 'https://m.xxiaoyu.com/getcookie',
       method: 'GET',
@@ -15,17 +17,19 @@ App({
           let index = cookie.indexOf(';');
           wx.setStorageSync('xiaoyu_sessionID', cookie.slice(0, index));
           Login(
-            res => {console.log(res)},
+            res => {
+              console.log(res)
+            },
             () => {},
-            's',
-            's'
+            'xiaoyu',  
+            'xiaoyu'      
           )
 
         } catch (err) {
           throw new Error('设置cookie失败');
           return;
         }
-      }, 
+      },
       fail() {
         throw new Error('获取cookie失败');
         return;

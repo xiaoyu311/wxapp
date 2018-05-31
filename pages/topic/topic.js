@@ -1,11 +1,13 @@
-
-import { article_info, reply_list } from '../../lib/js/server.js';
+import {
+  article_info,
+  reply_list
+} from '../../lib/js/server.js';
 
 Page({
   data: {
     articleInfo: null,
     article_id: undefined,
-    replyList: [] 
+    replyList: []
   },
   onLoad(options) {
     this.setData({
@@ -16,14 +18,14 @@ Page({
         this.setData({
           articleInfo: res.data
         });
-      },   
+      },
       () => {},
       options.article_id
     );
     reply_list(
       res => {
         if (res.status == 1) {
-          let replyList = res.data.map(item => { 
+          let replyList = res.data.map(item => {
             if (item.Reply_id) {
               let Reply_loginame;
               res.data.forEach(value => {
@@ -35,7 +37,9 @@ Page({
             }
             return item;
           });
-          this.setData({ replyList });
+          this.setData({
+            replyList 
+          });  
         }
       },
       () => {},
