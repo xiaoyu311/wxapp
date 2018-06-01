@@ -21,8 +21,8 @@ App({
               console.log(res)
             },
             () => {},
-            'xiaoyu',  
-            'xiaoyu'      
+            'xiaoyu',
+            'xiaoyu'   
           )
 
         } catch (err) {
